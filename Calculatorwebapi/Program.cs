@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddScoped<Icalculator, Calculatorservice>();
+builder.Services.AddScoped<Iuser, Userservice>();
 
 builder.Services.AddCors();
 
