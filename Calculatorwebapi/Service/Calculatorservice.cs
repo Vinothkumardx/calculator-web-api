@@ -34,14 +34,14 @@ namespace Calculatorwebapi.Service
 
         public async Task<List<Calculatormodel>> Getcalculatorlist()
         {
-            return await _dbcontextclass.calculatormodel.FromSqlRaw("[dbo.Getallvalue]").ToListAsync();
+            return await _dbcontextclass.user.FromSqlRaw("[dbo.Getallvalue]").ToListAsync();
         }
 
         public async Task<IEnumerable<Calculatormodel>> Getvaluebyid(int Id)
         {
             var para=new SqlParameter("@Id",Id);
 
-            var Idresult=await Task.Run(()=>_dbcontextclass.calculatormodel.FromSqlRaw(@"Exec [dbo.Getvaluebyid] @Id",para).ToListAsync());
+            var Idresult=await Task.Run(()=>_dbcontextclass.user.FromSqlRaw(@"Exec [dbo.Getvaluebyid] @Id",para).ToListAsync());
             return Idresult;
         }
 

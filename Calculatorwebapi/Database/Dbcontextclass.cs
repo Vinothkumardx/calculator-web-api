@@ -10,7 +10,9 @@ namespace Calculatorwebapi.Database
 
         }
 
-        public DbSet <Calculatormodel> calculatormodel { get; set; }
+        public DbSet <Calculatormodel> user { get; set; }
+
+        public DbSet<User> users { get; set; }
     }
 
     
